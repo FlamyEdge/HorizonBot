@@ -1,7 +1,10 @@
 module.exports = message => {
-  const values = message.content.split(" ");
-  const color = values[1];
-  const body = values[2] ? message.content.substr(message.content.indexOf(' '), message.content.indexOf(' ')+1) : '';
+  const values = message.content.split(" ")
+  const commands = values.shift()
+  const color = values.shift()
+  const body = values.length ? values.join(" ") : undefined
+  if (typeof color === 'undefined') return message.reply("Creation of embed failed: not a valid color")
+  if (typeof body === 'undefined') return message.reply("Creation of embed failed: not a valid body")
   return message.reply({embed: {
     color: color,
     description: body
