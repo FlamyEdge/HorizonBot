@@ -27,5 +27,5 @@ module.exports = message => {
   .addBlankField(true)
   .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
 
-  return message.channel.send({embed});
+  return message.reply({embed})
 }
