@@ -3,4 +3,7 @@ module.exports = (client, message) => {
   if (message.content.startsWith('!kick')) {
     return kick(message)
   }
+  if (message.content.startsWith('!embed')) {
+    return embed(message)
+  }
 }
